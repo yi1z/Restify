@@ -1,0 +1,7 @@
+.background-woodhouse {
+    background-image: "blue-house.jpg";
+    background-position: left bottom, right top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    height: 10vh;
+  }
