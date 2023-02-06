@@ -65,15 +65,9 @@ footer{
 }
 
 
-#login_buttom{
-
-    grid-area: left;
-
-}
-
 #register_buttom{
 
-    grid-area: right;
+    grid-area: left;
     
 }
 

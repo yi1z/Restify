@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="sign_up.css">
     <title>Document</title>
 </head>
 <body>
@@ -29,7 +29,25 @@
             
             <!--Login Form-->
             <form id="login" ction="test.html" method="POST">
-                <h1>Login</h1>
+                <h1>Sign_up</h1>
+
+                <!--First Name-->
+                <div>
+                    <label class="top_of_form" for="first_name">
+                        Your First Name:
+                    </label>
+                    <input id="first_name" class="bottom_of_form" type="text" placeholder="example: Harry" name="user_first_name"  required>
+                </div>
+
+                <!--Last_name Name-->
+
+                <div>
+                    <label class="top_of_form" for="last_name">
+                        Your Last Name:
+                    </label>
+                    <input id="last_name" class="bottom_of_form" type="text" placeholder="example: Potter" name="user_last_name"  required>
+                </div>
+                
                 <!--Email-->    
                 <div>
                     <label class="top_of_form" for="email">
@@ -37,26 +55,36 @@
                     </label>
                     <input id="email" class="bottom_of_form" type="text" placeholder="example@mail.ca" name="user_email"  required>
                 </div>
+
+                <!--Email-->    
+                <div>
+                    <label class="top_of_form" for="phone">
+                        Contact Number:
+                    </label>
+                    <input id="phone" class="bottom_of_form" type="tel" placeholder="example: (123)-456-7890" pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" name="user_phone"  required>
+                </div>
     
                 <!--Passowrd-->
                 <div>
                     <label class="top_of_form" for="password">
                         Your Password:
                     </label>
-                    <input id="password" class="bottom_of_form" placeholder="your password" type="password" name="user_password" required>
+                    <input id="password" class="bottom_of_form" type="password" name="user_password" required>
                 </div>
+
+                <!--Comfirm Passowrd-->
+                <div>
+                    <label class="top_of_form" for="comfirm_password">
+                        Comfirm Password:
+                    </label>
+                    <input id="comfirm_password" class="bottom_of_form"  type="password" name="user_password" required>
+                </div>
+
     
 
                 <!--Buttom Grid-->
                 <div class="buttom">
                     <!--Login Buttom-->
-
-                    <button id="login_buttom" type="submit" value="login" form="login">
-                        Login
-                    </button>
-
-        
-                    <!--Register Buttom-->
 
                     <button id="register_buttom" type="button" value="register" form="login">
 
