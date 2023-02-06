@@ -76,13 +76,21 @@ footer{
 
 form{
     background-color:beige;
-    border: 1px solid black
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+form > h1{
+
+    font-weight: bold;
+    text-align: center;
+
 }
 
 @media only screen and (max-width:480px) {
     #login > div{
         display: grid;
-        grid-template-rows: 3rem 3rem;
+        grid-template-rows: 1fr 2fr;
         grid-template-areas: "top_of_form"
                             "bottom_of_form";
         grid-template-columns: 100%;
