@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="reservation.css">
+    <link rel="stylesheet" href="reservation_denied_usr.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -38,7 +40,7 @@
                     <div class="sub_nav">
                         <p>
                             <!--Back to account mgm-->
-                            <a href="account_mgm.html">
+                            <a href="">
                                 Account
                             </a>
                             > My Reservation
@@ -69,20 +71,16 @@
                             
                             <!-- My trip-->
                             <div class="trip_contianer">
-                                <a  href="#">
-                                    <h4 class="current_panel">
-                                        My Trip
-                                    </h4>
-                                </a>
+                                <h4>
+                                    My Trip
+                                </h4>
                             </div>
 
                             <!--My host-->
                             <div class="host_container">
-                                <a href="Reservation_main_host.html">
-                                    <h4>
-                                        My Host
-                                    </h4>
-                                </a>
+                                <h4>
+                                    My Host
+                                </h4>
                             </div>
 
                         </div>
@@ -92,17 +90,17 @@
 
                             <!-- List of event option-->
                             <ul>
-                                <li><a href="Reservation_approve.html">Approve</a></li>
+                                <li>Approve</li>
 
-                                <li><a href="Reservation_pending_usr.html">Pending</a></li>
+                                <li>Pending</li>
                                 
-                                <li><a href="Reservation_denied_usr.html">Denied</a></li>
+                                <li>Denied</li>
 
-                                <li><a>Expire</a></li>
+                                <li>Expire</li>
 
-                                <li><a>Cancel</a></li>
+                                <li>Cancel</li>
                                 
-                                <li><a>Complete</a></li>
+                                <li>Complete</li>
 
 
                             </ul>
@@ -113,13 +111,21 @@
                     </div>
 
                     <!--Reservation_list-->
-                    <div class="reservation_list main_usr">
+                    <div class="reservation_list">
 
-                        <div class="main_item">
-                            <p>
-                                You have not choose any option yet.
-                            </p>
-                        </div>
+                        <!--List of reservation-->
+                        <ul class="reservation_list_contianer">
+                            <li class="categories_list">
+                                
+                                <div class="categories_bar">
+                                    <P>Property</P>
+                                    <p>Reason</p>
+                                    <p>Contact</p>
+
+                                </div>
+                                
+                            </li>
+                        </ul>
 
                     </div>
 

@@ -1,0 +1,10 @@
+.categories_bar{
+    display: grid;
+    width: 100%;
+    border: 1px solid aquamarine;
+    height: 100%;
+    grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+}
+.categories_bar > p{
+    text-align: center;
+}

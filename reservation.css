@@ -41,12 +41,19 @@ body{
     padding-left: 1rem;
 }
 
+.sub_nav  a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
 
 .reservation_content{
 
     display: flex;
     height: 80%;
-    width: 100%;
+    width: 95%;
+    margin-left: 1rem;
+    margin-right: 2rem;
 }
 
 .option_list{
@@ -55,6 +62,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    border: 1px solid #333333;
 }
 
 .user_host_option{
@@ -63,8 +71,24 @@ body{
     justify-content: flex-start;
     align-items: center;
     height: 10%;
-
+    border: 1px #333333 solid;
+    background-color: #333333;
 }
+
+.current_panel {
+    color: #00b8d4;
+    font-size: bolder;
+}
+
+.user_host_option  a {color: #B2F5EA;}
+
+.user_host_option a:hover{color: white;}
+
+.event_option{
+    
+    background-color: #BBBBBB;
+}
+
 
 .user_host_option  h4 {
 
@@ -123,7 +147,9 @@ body{
 .reservation_list_contianer{
 
     height: 100%;
-    width: 90%;
+    width: 95%;
+    border: 1px solid #333333;
+
 }
 
 .reservation_list_contianer > li {
@@ -149,3 +175,16 @@ body{
 
 }
 
+.main_usr{
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main_item{
+    padding-top: 10rem;
+    font-size: 2rem;
+    
+}
