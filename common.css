@@ -37,4 +37,7 @@ main{
 footer{
     grid-area: footer !important;
     text-align: center;
+    background-color: white;
+    line-height: 3rem;
+    border-top: 1px solid rgb(240, 240, 240);
 }
