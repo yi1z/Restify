@@ -1,0 +1,151 @@
+
+/*Testing*/
+
+body{
+    background-image: none;
+}
+.main_content{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub_header{
+    align-self: center;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sub_header > .welcome > h2{
+    font-weight: bolder;
+    font-size: 3rem;
+
+}
+
+.sub_header > .welcome > h3{
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+.sub_nav{
+    align-self: flex-start;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+
+.reservation_content{
+
+    display: flex;
+    height: 80%;
+    width: 100%;
+}
+
+.option_list{
+
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user_host_option{
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10%;
+
+}
+
+.user_host_option  h4 {
+
+    font-weight: bolder;
+    font-size: 1rem;
+    
+
+}
+
+.trip_contianer{
+
+    width: 50%;
+    text-align: center;
+
+}
+
+
+
+.host_container{
+
+    width: 50%;
+    text-align: center;
+
+}
+
+
+.event_option{
+
+    height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.event_option ul{
+
+    width: 100%;
+
+}
+.event_option  li{
+
+    text-align: center;
+    font-size: 2rem;
+    list-style-type: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+
+.reservation_list{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.reservation_list_contianer{
+
+    height: 100%;
+    width: 90%;
+}
+
+.reservation_list_contianer > li {
+    height: 8rem;
+    width: 100%;
+    border: 1px solid black;
+
+
+}
+
+.reservation_list_contianer > li {
+    height: 8rem;
+    width: 100%;
+    border: 1px solid black;
+
+
+}
+
+.categories_list{
+    height: 2rem !important;
+    width: 100%;
+    border: 1px solid black;
+
+}
+
