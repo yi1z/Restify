@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restify</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="all_content">
+        <!-- header-bar -->
+        <header>
+            <nav class="navbar has-shadow is-white">
+                <div class="navbar-brand">
+                    <a class="navbar-item">
+                        <img src="Restify.jpg" alt="site 1ogo" class="py-2 px-2">
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- main content -->
+        <main>
+            <div class="container is-fluid">
+                <div class="columns">
+                <div class="column is-6 is-offset-3">
+                    <div class="box">
+                    <h1 class="title">Edit basic information</h1>
+                    <form action="/houses" method="POST">
+                        <!-- 房源名称 -->
+                        <div class="field">
+                            <label class="label">Name of your property</label>
+                            <div class="control">
+                                <input class="input is-link is-rounded" type="text" name="p-name" placeholder="required">
+                            </div>
+                            </div>
+                        <!-- 房源地址 -->
+                        <div class="field">
+                        <label class="label">Address</label>
+                        <div class="control">
+                            <input class="input is-link is-rounded" type="text" name="address" placeholder="required">
+                        </div>
+                        </div>
+                        <!-- 房源联系人 -->
+                        <div class="field">
+                        <label class="label">Host name</label>
+                        <div class="control">
+                            <input class="input is-link is-rounded" type="text" name="contact" placeholder="required">
+                        </div>
+                        </div>
+                        <div class="field">
+                        <label class="label">Phone number</label>
+                        <div class="control">
+                            <input class="input is-link is-rounded" type="text" name="phone" placeholder="required">
+                        </div>
+                        </div>
+        
+                        <div class="field">
+                        <label class="label">Properties status</label>
+                        <div class="control">
+                        <div class="select is-link is-rounded">
+                            <select name="status">
+                                <option value="0">Not rented</option>
+                                <option value="1">Already rented</option>
+                            </select>
+                        </div>
+                        <!-- 按钮改成link -->
+                        <div class="field is-grouped is-grouped-right">
+                            <div class="control">
+                              <a href="create-my-p2.html" class="button is-link is-rounded">Next page</a>
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+    </div>
+</body>
+</html>
