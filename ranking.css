@@ -1,0 +1,157 @@
+body{
+    background-image: none;
+}
+.main_content{
+
+    height: 100vh;
+    width: 100vw;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.left{
+
+    border: 1px black solid;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.image_container{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.image_container > img{
+
+    height: 300px;
+    width:  300px;
+    border-radius: 150px ;
+    line-height: 300px;
+    margin-bottom: 1rem;
+    border: 1px solid #3333;
+
+
+}
+
+
+.start_container{
+    height: 75%;
+    border-top: 1px solid #3333 !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.checked{
+    color: orange;
+    
+}
+
+.fa {
+    font-size: 2rem !important;
+  }
+
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+.Person_info_container{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    border-bottom: 1px #3333 solid;
+    justify-content: flex-start;
+    
+}
+
+.heading{
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+
+}
+
+.info_detail{
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    display: flex;
+
+}
+
+.info_detail_left{
+    width: 30%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.info_detail_right{
+    width: 70%;
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+.Comment_section{
+    height: 100%;
+    width: 100%;
+}
+
+.comment_heading{
+    height: 10%;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.comment_container{
+
+    height: 90%;
+    width: 100%;
+    border: 1px black solid;
+    overflow: scroll;
+}
+
+.each_comment{
+
+    border: 1px #3333 solid;
+    height: 8rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.host{
+
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-right: 1rem;
+    width: 20%;
+    text-align: center;
+}
+.their_comment{
+    font-size: 1rem;
+    border: 1px solid black;
+    width: 78%;
+    height: 100%;
+}
