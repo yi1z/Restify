@@ -1,0 +1,34 @@
+.each_list_item{
+    height: auto !important;
+    width: 100%;
+    border: 1px solid saddlebrown !important;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    place-items: center;
+
+}
+
+.each_list_item img{
+    width: 200px;
+    height: 200px;
+}
+
+.each_list_item *{
+    text-align: center;
+}
+
+.client_review{
+    height: 200px;
+
+}
+
+.client_review img{
+    margin-top: 2rem;
+    height: 50px;
+    width: 30px;
+
+}
+
+.review_buttom{
+    margin-top: 1rem;
+}

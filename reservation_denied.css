@@ -3,7 +3,7 @@
     width: 100%;
     border: 1px solid aquamarine;
     height: 100%;
-    grid-template-columns: 8fr 2fr;
+    grid-template-columns: 2fr 4fr 1fr;
 }
 .categories_bar > p{
     text-align: center;
