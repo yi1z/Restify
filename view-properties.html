@@ -8,16 +8,75 @@
   
 </head>
 <body>
+    <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href=" ">
+          Home
+        </a >
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a >
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start">
+
+          <a class="navbar-item">
+            Property
+          </a >
+
+          <a class="navbar-item">
+            Order
+          </a >
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a >
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About us
+              </a >
+              <a class="navbar-item">
+                Register a property
+              </a >
+              <a class="navbar-item">
+                Contact
+              </a >
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a >
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+
+          <a class="navbar-item is-hidden">
+            < img src="inbox.png" alt="Inbox">
+          </a >
+
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-link">
+                <strong>Sign up</strong>
+              </a >
+              <a class="button is-light">
+                Log in
+              </a >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
     <div class="all_content">
-        <header>
-            <nav class="navbar has-shadow is-white">
-                <div class="navbar-brand">
-                    <a class="navbar-item">
-                        <img src="Restify.jpg" alt="site 1ogo" class="py-2 px-2">
-                    </a>
-                </div>
-            </nav>
-        </header>
 
         <main>
             <section class="section">
@@ -32,7 +91,7 @@
                                 <a href="mailto:Amy.A@gmail.com?subject=About House1&body=I want to ask you information about House1:
                                 " class = "block">Amy.A@gmail.com</a></h3><br>
                             
-                            <button class="button is-info is-rounded block">Book now!</button>
+                            <a href="book-property.html" class="button is-info is-rounded block">Book now!</a>
                             <h2 class="is-size-5-mobile is-size-3-desktop subtitle"> $Price: 999 CAD / night</h>
                         </div>
                         <div class="column box">
@@ -111,7 +170,7 @@
                             <p>
                             <strong>Post new comment</strong>
                             <br>
-                            <a  href="comment-properties.html">
+                            <a  href="new-comment.html">
                                 <button class="button">Make a new comment</button>
                             </a>
                             </p>

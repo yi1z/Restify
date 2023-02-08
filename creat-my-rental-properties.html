@@ -25,9 +25,15 @@
                 <div class="columns">
                 <div class="column is-6 is-offset-3">
                     <div class="box">
-                    <h1 class="title">Edit detail information</h1>
+                    <h1 class="title">Edit/Add</h1>
                     <form action="/houses" method="POST">
-                        
+                        <!-- 房源地址 -->
+                        <div class="field">
+                        <label class="label">Address</label>
+                        <div class="control">
+                            <input class="input is-link is-rounded" type="text" name="address" placeholder="required" required>
+                        </div>
+                        </div>
                         <!-- 房源人数 -->
                         <div class="field">
                             <label class="label">Number of guests allowed</label>
@@ -74,13 +80,37 @@
                                 <input class="input is-link is-rounded" name="amenities available" placeholder="required" required>
                             </div>
                             </div>
+        
+                        <!-- 房源联系人 -->
+                        <div class="field">
+                        <label class="label">Host name</label>
+                        <div class="control">
+                            <input class="input is-link is-rounded" type="text" name="contact" placeholder="required" required>
+                        </div>
+                        </div>
+                        <div class="field">
+                        <label class="label">Phone number</label>
+                        <div class="control">
+                            <input class="input is-link is-rounded" type="text" name="phone" placeholder="required" required>
+                        </div>
+                        </div>
+        
+                        <div class="field">
+                        <label class="label">Properties status</label>
+                        <div class="control">
+                        <div class="select is-link is-rounded">
+                            <select name="status">
+                                <option value="0">Not rented</option>
+                                <option value="1">Already rented</option>
+                            </select>
+                        </div>
                         <!-- 按钮改成link -->
                         <div class="field is-grouped is-grouped-right">
                             <div class="control">
-                              <a href="my-properties-list.html" class="button is-link is-rounded">Submit</a>
+                              <button class="button is-link is-rounded">Submit</button>
                             </div>
                             <div class="control">
-                              <a href="my-properties-list.html" class="button is-link is-light is-rounded">Cancel</a>
+                              <button class="button is-link is-light is-rounded">Cancel</button>
                             </div>
                         </div>
                         </div>
@@ -95,7 +125,10 @@
             </p>
         </footer>
 
-    </div>    
+    </div>
+  <!--添加内容-->
+
+    
 
 </body>
 </html>
