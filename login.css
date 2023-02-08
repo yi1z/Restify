@@ -44,8 +44,9 @@ form{
 
 form > h1{
 
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
+    font-size: 2rem;
 
 }
 
