@@ -5,113 +5,147 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/sign_up.css">
-    <title>Document</title>
+    <title>Sing up</title>
 </head>
 <body>
-    <div class="all_content">
-        <header>
-            <nav class="navbar has-shadow is-white">
-                <div class="navbar-brand">
-                    <a class="navbar-item">
-                        <img src="../images/Restify.jpg" alt="site 1ogo" class="py-2 px-2">
-                    </a>
-                </div>
+    <nav class="navbar is-link is-hidden-mobile" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-hidden-tablet">
 
-                <div class="navbar-menu" id="nav-1inks">
-                    <div class="navbar-start is-white">
-                        <a class= "navbar-item" >Home</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-            <!--Login Form-->
-            <form id="login" action="account_mgm.html" method="POST">
-                <h1>Sign_up</h1>
+      <div class="navbar-menu">
+        <div class="navbar-start">
 
-                <!--First Name-->
-                <div>
-                    <label class="top_of_form" for="first_name">
-                        Your First Name:
-                    </label>
-                    <input id="first_name" class="bottom_of_form" type="text" placeholder="example: Harry" name="user_first_name"  required>
-                </div>
+          <a class="navbar-item" href="main_page.html">
+            Home
+          </a>
 
-                <!--Last_name Name-->
+          <a class="navbar-item" href="my-properties-list.html">
+            Property
+          </a>
 
-                <div>
-                    <label class="top_of_form" for="last_name">
-                        Your Last Name:
-                    </label>
-                    <input id="last_name" class="bottom_of_form" type="text" placeholder="example: Potter" name="user_last_name"  required>
-                </div>
+          <a class="navbar-item" href="Reservation_main.html">
+            Order
+          </a>
 
-                <!--Email-->
-                <div>
-                    <label class="top_of_form" for="email">
-                        Your Email:
-                    </label>
-                    <input id="email" class="bottom_of_form" type="text" placeholder="example@mail.ca" name="user_email"  required>
-                </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
 
-                <!--Email-->
-                <div>
-                    <label class="top_of_form" for="phone">
-                        Contact Number:
-                    </label>
-                    <input id="phone" class="bottom_of_form" type="tel" placeholder="example: (123)-456-7890" pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" name="user_phone"  required>
-                </div>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About us
+              </a>
+              <a class="navbar-item">
+                Register a property
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-                <!--Passowrd-->
-                <div>
-                    <label class="top_of_form" for="password">
-                        Your Password:
-                    </label>
-                    <input id="password" class="bottom_of_form" type="password" name="user_password" required>
-                </div>
+    <div class="hero is-small">
+        <div class="hero-body">
 
-                <!--Comfirm Passowrd-->
-                <div>
-                    <label class="top_of_form" for="comfirm_password">
-                        Comfirm Password:
-                    </label>
-                    <input id="comfirm_password" class="bottom_of_form"  type="password" name="user_password" required>
-                </div>
-
-
-
-                <!--Buttom Grid-->
-                <div class="buttom">
-                    <!--Login Buttom-->
-
-                    <button id="register_buttom" type="submit" value="register" form="login">
-
-
-                        Register
-
-                    </button>
-
-                </div>
-
-
-
-            </form>
-
-        </main>
-        <footer>
-            <p>
-                @copyright chang144
-            </p>
-        </footer>
+        </div>
     </div>
 
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container">
+
+            <div class="columns">
+                <div class="column is-two-fifths"></div>
+                    <div class="column">
+                        <figure class="image">
+                            <img src="../images/Restify.jpg" alt="Restify">
+                        </figure>
+                    </div>
+                <div class="column is-two-fifths"></div>
+            </div>
+    </div>
+        </div>
+    </section>
 
 
 
+    <div class="container">
+      <div class="columns is-justify-content-center">
+        <div class="column is-6-tablet is-5-desktop is-4-widescreen is-3-fullh">
+          <form method="POST" action="https://herotofu.com/start" class="box p-5">
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Username</span>
+              <input
+                required
+                type="email"
+                class="input"
+                placeholder="Something"
+              />
+            </label>
 
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Email address</span>
+              <input
+                required
+                type="email"
+                class="input"
+                placeholder="something@example.com"
+              />
+            </label>
+
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Password</span>
+              <input
+                name="password"
+                type="password"
+                class="input"
+                minlength="6"
+                placeholder="(must be 6+ chars)"
+                required
+              />
+            </label>
+
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Confirm Password</span>
+              <input
+                name="password"
+                type="password"
+                class="input"
+                minlength="6"
+                placeholder="(must be 6+ chars)"
+                required
+              />
+            </label>
+
+            <div class="mb-4">
+              <label>
+                <input type="checkbox" name="tos" value="yes" required />
+                <span>I agree with the terms of service</span>
+              </label>
+            </div>
+
+            <div class="mb-4">
+              <button type="submit" class="button is-link px-4">Sign Up</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>
