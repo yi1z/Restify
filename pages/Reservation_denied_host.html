@@ -12,22 +12,72 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="all_content">
-        <header>
-            <nav class="navbar has-shadow is-white">
-                <div class="navbar-brand">
+    <header>
+        <nav class="navbar is-link is-hidden-mobile" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand is-hidden-tablet">
+        
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+        
+            <div class="navbar-menu">
+              <div class="navbar-start">
+        
+                <a class="navbar-item" href="main_page.html">
+                  Home
+                </a>
+        
+                <a class="navbar-item" href="my-properties-list.html">
+                  Property
+                </a>
+        
+                <a class="navbar-item" href="Reservation_main.html">
+                  Order
+                </a>
+        
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    More
+                  </a>
+        
+                  <div class="navbar-dropdown">
                     <a class="navbar-item">
-                        <img src="../images/Restify.jpg" alt="site 1ogo" class="py-2 px-2">
+                      About us
                     </a>
+                    <a class="navbar-item">
+                      Register a property
+                    </a>
+                    <a class="navbar-item">
+                      Contact
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                      Report an issue
+                    </a>
+                  </div>
                 </div>
-
-                <div class="navbar-menu" id="nav-1inks">
-                    <div class="navbar-start is-white">
-                        <a class= "navbar-item" >Home</a>
-                    </div>
+              </div>
+        
+              <div class="navbar-end">
+        
+                <a class="navbar-item">
+                  <img src="../images/email-a.avif" alt="Inbox">
+                </a>
+        
+                <a class="navbar-item" href="personal_info.html">
+                  <div class="image is-rounded">
+                    <img src="../images/default%20user.png" alt="Profile">
+                  </div>
+                </a>
                 </div>
-            </nav>
-        </header>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="all_content">
         <main>
 
             <!--Main content-->
@@ -142,6 +192,28 @@
             </p>
         </footer>
     </div>
+
+    <nav class="navbar is-link is-fixed-bottom is-hidden-desktop">
+        <div class="navbar-brand">
+          <div class="navbar-item">
+    
+            <div class="buttons ml-auto mr-auto">
+              <a class="button is-link" href="main_page.html">
+                Home
+              </a>
+              <a class="button is-link" href="view-properties.html">
+                Property
+              </a>
+              <a class="button is-link" href="Reservation_main.html">
+                Order
+              </a>
+              <a class="button is-link" href="personal_info.html">
+                Profile
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
 
 
