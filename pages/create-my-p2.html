@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restify</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="all_content">
@@ -14,7 +14,7 @@
             <nav class="navbar has-shadow is-white">
                 <div class="navbar-brand">
                     <a class="navbar-item">
-                        <img src="Restify.jpg" alt="site 1ogo" class="py-2 px-2">
+                        <img src="../images/Restify.jpg" alt="site 1ogo" class="py-2 px-2">
                     </a>
                 </div>
             </nav>
@@ -27,7 +27,7 @@
                     <div class="box">
                     <h1 class="title">Edit detail information</h1>
                     <form action="/houses" method="POST">
-                        
+
                         <!-- 房源人数 -->
                         <div class="field">
                             <label class="label">Number of guests allowed</label>
@@ -42,7 +42,7 @@
                             <input class="input is-link is-rounded" type="number" name="beds" min="0" placeholder="required" required>
                         </div>
                         </div>
-        
+
                         <!-- 房源浴室数 -->
                         <div class="field">
                             <label class="label">Number of baths</label>
@@ -50,7 +50,7 @@
                                 <input class="input is-link is-rounded" type="number" name="baths" min="0" placeholder="required" required>
                             </div>
                         </div>
-        
+
                         <!-- 房源图片 -->
                         <div class="field">
                         <label class="label">Images</label>
@@ -58,7 +58,7 @@
                             <input class="input is-link is-rounded" type="file" name="image" placeholder="required" multiple>
                         </div>
                         </div>
-        
+
                         <!-- 房源描述 -->
                         <div class="field">
                         <label class="label">Description</label>
@@ -66,7 +66,7 @@
                             <input class="input is-link is-rounded" name="description" placeholder="required" required>
                         </div>
                         </div>
-        
+
                          <!-- 可用设备 -->
                          <div class="field">
                             <label class="label">Amenities available</label>
@@ -95,7 +95,7 @@
             </p>
         </footer>
 
-    </div>    
+    </div>
 
 </body>
 </html>
