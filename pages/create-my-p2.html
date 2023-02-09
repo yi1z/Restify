@@ -6,7 +6,6 @@
   <title>Restify</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="all_content">
@@ -33,6 +32,7 @@
                     </a>
           
                     <a class="navbar-item">
+                        <img src="../images/Restify.jpg" alt="site 1ogo" class="py-2 px-2">
                       Order
                     </a>
           
@@ -87,7 +87,7 @@
                     <div class="box">
                     <h1 class="title">Edit detail information</h1>
                     <form action="/houses" method="POST">
-                        
+
                         <!-- 房源人数 -->
                         <div class="field">
                             <label class="label">Number of guests allowed</label>
@@ -102,7 +102,7 @@
                             <input class="input is-link is-rounded" type="number" name="beds" min="0" placeholder="required" required>
                         </div>
                         </div>
-        
+
                         <!-- 房源浴室数 -->
                         <div class="field">
                             <label class="label">Number of baths</label>
@@ -110,7 +110,7 @@
                                 <input class="input is-link is-rounded" type="number" name="baths" min="0" placeholder="required" required>
                             </div>
                         </div>
-        
+
                         <!-- 房源图片 -->
                         <div class="field">
                         <label class="label">Images</label>
@@ -118,7 +118,7 @@
                             <input class="input is-link is-rounded" type="file" name="image" placeholder="required" multiple>
                         </div>
                         </div>
-        
+
                         <!-- 房源描述 -->
                         <div class="field">
                         <label class="label">Description</label>
@@ -126,7 +126,7 @@
                             <input class="input is-link is-rounded" name="description" placeholder="required" required>
                         </div>
                         </div>
-        
+
                          <!-- 可用设备 -->
                          <div class="field">
                             <label class="label">Amenities available</label>
@@ -150,7 +150,7 @@
             </div>
         </main>
 
-    </div>    
+    </div>
 
 </body>
 </html>
