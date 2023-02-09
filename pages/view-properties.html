@@ -5,76 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restify</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  
 </head>
 <body>
-    <nav class="navbar is-link" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href=" ">
-          Home
-        </a >
+<nav class="navbar is-link is-hidden-mobile" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-hidden-tablet">
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a >
+        </a>
       </div>
 
       <div class="navbar-menu">
         <div class="navbar-start">
 
+          <a class="navbar-item" href="#">
+            Home
+          </a>
+
           <a class="navbar-item">
             Property
-          </a >
+          </a>
 
           <a class="navbar-item">
             Order
-          </a >
+          </a>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               More
-            </a >
+            </a>
 
             <div class="navbar-dropdown">
               <a class="navbar-item">
                 About us
-              </a >
+              </a>
               <a class="navbar-item">
                 Register a property
-              </a >
+              </a>
               <a class="navbar-item">
                 Contact
-              </a >
+              </a>
               <hr class="navbar-divider">
               <a class="navbar-item">
                 Report an issue
-              </a >
+              </a>
             </div>
           </div>
         </div>
 
         <div class="navbar-end">
 
-          <a class="navbar-item is-hidden">
-            < img src="inbox.png" alt="Inbox">
-          </a >
+          <a class="navbar-item">
+            <img src="../email-a.avif" alt="Inbox">
+          </a>
 
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-link">
-                <strong>Sign up</strong>
-              </a >
-              <a class="button is-light">
-                Log in
-              </a >
+          <a class="navbar-item" href="../personal_info.html">
+            <div class="image is-rounded">
+              <img src="../default%20user.png" alt="Profile">
             </div>
+          </a>
           </div>
         </div>
       </div>
     </nav>
-
 
     <div class="all_content">
 
@@ -85,12 +80,12 @@
                         <div class="column">
                             <h1 class="is-size-5-mobile is-size-3-desktop title block"> House 1</h>
                             <h2 class="is-size-5-mobile is-size-3-desktop subtitle block"> Rating: 4/5</h>
-                            
+
                             <h3 class="is-size-12-mobile is-size-10-desktop media-content">
                                 <strong>Host:</strong> Amy <strong>Phone:</strong> 123456 <strong>Email:</strong>
                                 <a href="mailto:Amy.A@gmail.com?subject=About House1&body=I want to ask you information about House1:
                                 " class = "block">Amy.A@gmail.com</a></h3><br>
-                            
+
                             <a href="book-property.html" class="button is-info is-rounded block">Book now!</a>
                             <h2 class="is-size-5-mobile is-size-3-desktop subtitle"> $Price: 999 CAD / night</h>
                         </div>
@@ -106,7 +101,7 @@
                                     <strong>Amenities available:</strong> All<br>
                         </div>
             </section>
-            
+
 
             <!-- 房子图片 -->
             <section class="section">
@@ -182,5 +177,28 @@
         </main>
 
     </div>
+
+<nav class="navbar is-link is-fixed-bottom is-hidden-desktop">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+
+        <div class="buttons ml-auto mr-auto">
+          <button class="button is-link">
+            Home
+          </button>
+          <button class="button is-link">
+            Property
+          </button>
+          <button class="button is-link">
+            Order
+          </button>
+          <button class="button is-link">
+            Profile
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </nav>
 </body>
 </html>
