@@ -5,158 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <title>Document</title>
+    <title>Sing up</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar is-link is-hidden-mobile" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand is-hidden-tablet">
-        
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+    <nav class="navbar is-link is-hidden-mobile" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-hidden-tablet">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start">
+
+          <a class="navbar-item" href="../Main%20pages/main_page_logged_out.html">
+            Home
+          </a>
+
+          <a class="navbar-item" href="login.html">
+            Property
+          </a>
+
+          <a class="navbar-item" href="login.html">
+            Order
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About us
               </a>
-            </div>
-        
-            <div class="navbar-menu">
-              <div class="navbar-start">
-        
-                <a class="navbar-item" href="main_page.html">
-                  Home
-                </a>
-        
-                <a class="navbar-item" href="my-properties-list.html">
-                  Property
-                </a>
-        
-                <a class="navbar-item" href="Reservation_main.html">
-                  Order
-                </a>
-        
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    More
-                  </a>
-        
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                      About us
-                    </a>
-                    <a class="navbar-item">
-                      Register a property
-                    </a>
-                    <a class="navbar-item">
-                      Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                      Report an issue
-                    </a>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="navbar-end">
-        
-                <a class="navbar-item">
-                  <img src="../images/email-a.avif" alt="Inbox">
-                </a>
-        
-                <a class="navbar-item" href="personal_info.html">
-                  <div class="image is-rounded">
-                    <img src="../images/default%20user.png" alt="Profile">
-                  </div>
-                </a>
-                </div>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <div class="all_content">
-        
-        <main>
-
-            <!--Login Form-->
-            <form id="login" action="account_mgm.html" method="POST">
-                <h1>Login</h1>
-                <!--Email-->
-                <div>
-                    <label class="top_of_form" for="email">
-                        Your Email:
-                    </label>
-                    <input id="email" class="bottom_of_form" type="text" placeholder="example@mail.ca" name="user_email"  required>
-                </div>
-
-                <!--Passowrd-->
-                <div>
-                    <label class="top_of_form" for="password">
-                        Your Password:
-                    </label>
-                    <input id="password" class="bottom_of_form" placeholder="your password" type="password" name="user_password" required>
-                </div>
-
-
-                <!--Buttom Grid-->
-                <div class="buttom">
-                    <!--Login Buttom-->
-
-                    <button id="login_buttom" type="submit" value="login" form="login">
-                        Login
-                    </button>
-
-
-                    <!--Register Buttom-->
-
-                    <button id="register_buttom" type="button" value="register" form="login">
-
-                        <a " href="sign_up.html">
-                            Register
-                        </a>
-
-                    </button>
-                </div>
-
-
-
-            </form>
-
-        </main>
-        <footer>
-            <p>
-                @copyright chang144
-            </p>
-        </footer>
-    </div>
-
-    <nav class="navbar is-link is-fixed-bottom is-hidden-desktop">
-        <div class="navbar-brand">
-          <div class="navbar-item">
-    
-            <div class="buttons ml-auto mr-auto">
-              <a class="button is-link" href="main_page.html">
-                Home
+              <a class="navbar-item">
+                Register a property
               </a>
-              <a class="button is-link" href="view-properties.html">
-                Property
+              <a class="navbar-item">
+                Contact
               </a>
-              <a class="button is-link" href="Reservation_main.html">
-                Order
-              </a>
-              <a class="button is-link" href="personal_info.html">
-                Profile
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
               </a>
             </div>
           </div>
         </div>
-      </nav>
+
+          <div class="navbar-end">
+
+              <div class="navbar-item">
+                  <p>
+                      Don't have an account?
+                  </p>
+              </div>
 
 
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-light" href="../pages/sign_up.html">
+                      Sign up
+                    </a>
+                </div>
 
+            </div>
+        </div>
+      </div>
+    </nav>
 
+    <div class="hero is-small">
+        <div class="hero-body">
 
+        </div>
+    </div>
 
+    <section class="hero is-small">
+          <div class="hero-body has-text-centered">
+              <div class="container">
+                <img src="../images/Restify.jpg" alt="Restify">
+              </div>
+          </div>
+        </section>
+
+    <div class="container">
+      <div class="columns is-justify-content-center">
+        <div class="column is-6-tablet is-5-desktop is-4-widescreen is-3-fullh">
+          <form method="POST" action="https://herotofu.com/start" class="box p-5">
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Username / Email Address</span>
+              <input
+                class="input"
+                placeholder=""
+              />
+            </label>
+
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Password</span>
+              <input
+                name="password"
+                type="password"
+                class="input"
+                minlength="6"
+                placeholder=""
+                required
+              />
+            </label>
+
+            <div class="mb-4">
+              <label>
+                <input type="checkbox" name="tos" value="yes" required />
+                <span>I agree with the terms of service</span>
+              </label>
+            </div>
+
+            <div class="mb-4">
+                <a class="button is-link" href="main_page.html">
+                    Log in
+                </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
