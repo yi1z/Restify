@@ -5,18 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restify</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="common.css">
+  
+  
+  
 </head>
 
 <body>
     <header>
-        <nav class="navbar has-shadow is-white">
-            <div class="navbar-brand">
+      <nav class="navbar is-link is-hidden-mobile" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-hidden-tablet">
+  
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+  
+        <div class="navbar-menu">
+          <div class="navbar-start">
+  
+            <a class="navbar-item" href="main_page.html">
+              Home
+            </a>
+  
+            <a class="navbar-item">
+              Property
+            </a>
+  
+            <a class="navbar-item">
+              Order
+            </a>
+  
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>
+  
+              <div class="navbar-dropdown">
                 <a class="navbar-item">
-                    <img src="Restify.jpg" alt="site 1ogo" class="py-2 px-2">
+                  About us
                 </a>
+                <a class="navbar-item">
+                  Register a property
+                </a>
+                <a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>
+              </div>
             </div>
-        </nav>
+          </div>
+  
+          <div class="navbar-end">
+  
+            <a class="navbar-item is-hidden">
+              <img src="../inbox.png" alt="Inbox">
+            </a>
+  
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-link" href="../sign_up.html">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-light" href="../login.html">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
 
@@ -32,7 +94,7 @@
                             <article class="media box block">
                                 <div class="media-left">
                                   <figure class="image">
-                                    <img src="1.jpg" class="image is-96x96">
+                                    <img src="../images/1.jpg" class="image is-96x96">
                                   </figure>
                                 </div>
                                 <div class="media-content">
@@ -66,7 +128,7 @@
                             <article class="media box block">
                               <div class="media-left">
                                 <figure class="image">
-                                  <img src="2-1.jpg" class="image is-96x96">
+                                  <img src="../images/2-1.jpg" class="image is-96x96">
                                 </figure>
                               </div>
                               <div class="media-content">
