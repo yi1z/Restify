@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Main Logged Out</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <title>Main</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
 
   <body>
     <nav class="navbar is-link is-hidden-mobile" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-hidden-tablet">
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
@@ -20,15 +21,15 @@
       <div class="navbar-menu">
         <div class="navbar-start">
 
-          <a class="navbar-item" href="#">
+          <a class="navbar-item" href="main_page.html">
             Home
           </a>
 
-          <a class="navbar-item">
+          <a class="navbar-item" href="my-properties-list.html">
             Property
           </a>
 
-          <a class="navbar-item">
+          <a class="navbar-item" href="Reservation_main.html">
             Order
           </a>
 
@@ -57,20 +58,21 @@
 
         <div class="navbar-end">
 
-          <a class="navbar-item is-hidden">
-            <img src="../images/inbox.png" alt="Inbox">
-          </a>
+            <a class="navbar-item is-hidden">
+              <img src="../images/inbox.png" alt="Inbox">
+            </a>
 
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-link" href="../pages/sign_up.html">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light" href="../pages/login.html">
-                Log in
-              </a>
-            </div>
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-link" href="../pages/sign_up.html">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-light" href="../pages/login.html">
+                  Log in
+                </a>
+              </div>
 
+          </div>
         </div>
       </div>
     </nav>
@@ -90,11 +92,11 @@
              <div class="columns">
               <div class="column"></div>
 
-              <div class="column is-three-fifths-desktop is-full-mobile is-half-tablet">
+              <div class="column is-three-fifths-desktop is-full-mobile is-three-fifths-tablet">
                 <div class="field has-addons">
 
                   <div class="control is-expanded">
-                    <input class="input" type="text" placeholder="Where do you wanna stay?">
+                    <input class="input is-link" type="text" placeholder="Where do you wanna stay?">
                   </div>
 
                   <div class="control">
@@ -110,35 +112,285 @@
             </div>
 
           </div>
+
+          <div class="container is-hidden">
+             <div class="columns">
+
+               <div class="column is-one-fifth"></div>
+
+               <div class="column">
+                 <div class="field is-grouped">
+                    <input class="input is-link" type="text" placeholder="Lowest price">
+                    <p>&nbsp;~&nbsp;</p>
+                    <input class="input is-link" type="text" placeholder="Highest price">
+
+                   <div class="select is-link">
+                      <select>
+                          <option>
+                            Country
+                          </option>
+                          <option>
+                            America
+                          </option>
+                          <option>
+                            Canada
+                          </option>
+                          <option>
+                            China
+                          </option>
+                          <option>
+                            Denmark
+                          </option>
+                          <option>
+                            England
+                          </option>
+                          <option>
+                            German
+                          </option>
+                          <option>
+                            Italy
+                          </option>
+                          <option>
+                            Japan
+                          </option>
+                          <option>
+                            Mexico
+                          </option>
+                          <option>
+                            North Korea
+                          </option>
+                          <option>
+                            Singapore
+                          </option>
+                      </select>
+                    </div>
+
+                   <div class="select is-link">
+                    <select>
+                      <option>Order by</option>
+                      <option>Descending</option>
+                      <option>Ascending</option>
+                    </select>
+                 </div>
+
+                   <a class="button is-link ">
+                   Apply filter
+                 </a>
+                 </div>
+               </div>
+
+               <div class="column is-one-fifth"></div>
+            </div>
+          </div>
+
+          <!-- Show filters button -->
+          <div class="container">
+
+             <div class="columns">
+              <div class="column is-hidden-mobile"></div>
+
+              <div class="column is-one-fifth is-full-mobile is-one-fifth-tablet">
+                <div class="field has-addons">
+
+                  <div class="control">
+                    <a class="button is-link" href="filters.html">
+                      Show all filters
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="column is-hidden-mobile"></div>
+              <div class="column is-hidden-mobile"></div>
+              <div class="column is-hidden-mobile"></div>
+            </div>
+
+          </div>
+
+
       </div>
     </section>
 
     <div class="tabs is-centered">
       <ul>
-        <li class="is-active"><a>Recommended</a></li>
-        <li><a>Hot pick</a></li>
-        <li><a>Something special</a></li>
-        <li><a>Styles</a></li>
+        <li class="is-active"><a href="main_page.html">Recommended</a></li>
+        <li><a href="../Main%20pages/main_page_hot.html">Hot pick</a></li>
+        <li><a href="../Main%20pages/main_page_special.html">Something special</a></li>
+        <li><a href="../Main%20pages/main_page_styles.html">Styles</a></li>
       </ul>
     </div>
+
+    <!-- Property list -->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column"></div>
+
+                <div class="column is-one-quarter box">
+                    <a href="view-properties.html">
+                        <figure class="image is-5by4">
+                            <img src="../images/1.jpg" alt="ppic">
+                        </figure>
+                    </a>
+
+                    <!-- Summary -->
+                    <div>
+                        <div>
+                            Toronto, Canada
+                        </div>
+                        <div>
+                            Forest
+                        </div>
+                        <div>
+                            Feb. 21-27
+                        </div>
+                        <div>
+                            999 CAD / night
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter box">
+                    <a>
+                        <figure class="image is-5by4">
+                            <img src="../images/property%20pics/3-1.webp" alt="ppic">
+                        </figure>
+                    </a>
+
+                    <!-- Summary -->
+                    <div>
+                        <div>
+                            Bowmanville, Canada
+                        </div>
+                        <div>
+                            Beach and lake views
+                        </div>
+                        <div>
+                            Feb. 12-17
+                        </div>
+                        <div>
+                            389 CAD / night
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-quarter box">
+                    <figure class="image is-5by4">
+                        <img src="../images/property%20pics/4-1.webp" alt="ppic">
+                    </figure>
+
+                    <!-- Summary -->
+                    <div>
+                        <div>
+                            New York, New York, US
+                        </div>
+                        <div>
+                            Views
+                        </div>
+                        <div>
+                            Feb. 16-21
+                        </div>
+                        <div>
+                            1,132 CAD / night
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column"></div>
+
+                <div class="column is-one-quarter box">
+                    <a>
+                        <figure class="image is-5by4">
+                            <img src="../images/property%20pics/5-1.webp" alt="ppic">
+                        </figure>
+                    </a>
+                    <div>
+                        Kilcolgan, Ireland
+                    </div>
+                    <div>
+                        Built in the 11th century
+                    </div>
+                    <div>
+                        Feb. 9-14
+                    </div>
+                    <div>
+                        389 CAD / night
+                    </div>
+                </div>
+                <div class="column is-one-quarter box">
+                    <figure class="image is-5by4">
+                        <img src="../images/property%20pics/6-1.webp" alt="ppic">
+                    </figure>
+
+                    <!-- Summary -->
+                    <div>
+                        <div>
+                            Caledon, Canada
+                        </div>
+                        <div>
+                            39km away
+                        </div>
+                        <div>
+                            Feb. 18-25
+                        </div>
+                        <div>
+                            11,101 CAD / night
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-quarter box">
+                    <figure class="image is-5by4">
+                        <img src="../images/property%20pics/7-1.webp" alt="ppic">
+                    </figure>
+
+                    <!-- Summary -->
+                    <div>
+                        <div>
+                            Terres Basses, St. Matin
+                        </div>
+                        <div>
+                            Beach and sea
+                        </div>
+                        <div>
+                            May 5-12
+                        </div>
+                        <div>
+                            1,858 CAD / night
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
 
   <nav class="navbar is-link is-fixed-bottom is-hidden-desktop">
     <div class="navbar-brand">
       <div class="navbar-item">
 
         <div class="buttons ml-auto mr-auto">
-          <button class="button is-link">
+          <a class="button is-link" href="main_page.html">
             Home
-          </button>
-          <button class="button is-link">
+          </a>
+          <a class="button is-link" href="view-properties.html">
             Property
-          </button>
-          <button class="button is-link">
+          </a>
+          <a class="button is-link" href="Reservation_main.html">
             Order
-          </button>
-          <button class="button is-link">
+          </a>
+          <a class="button is-link" href="personal_info.html">
             Profile
-          </button>
+          </a>
         </div>
       </div>
     </div>
