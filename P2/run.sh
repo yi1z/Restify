@@ -1,0 +1,1 @@
+python3 restify/restify/manage.py runserver
