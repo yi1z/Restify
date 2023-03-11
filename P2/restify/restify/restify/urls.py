@@ -21,5 +21,6 @@ urlpatterns = [
 
     # Only for testing purpose
     # Delete Later: Reference: https://www.youtube.com/watch?v=xjMP0hspNLE
-    path('api/', include('api.urls'))
+    path('api/', include('api.urls')),
+    path('accounts/', include('accounts.urls'))
 ]
