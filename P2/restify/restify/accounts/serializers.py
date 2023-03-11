@@ -19,6 +19,8 @@ class ThisUserSerializer(ModelSerializer):
     def validate(self, data):
         if data['password1'] != data['password2']:
             raise serializers.ValidationError("Passwords don't match")
+        if data['avatar'] is None:
+            data['avatar'] = 'default.png'
         return data
     
     # We want to generate a new User and save to the databse.
