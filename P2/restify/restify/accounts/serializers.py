@@ -21,21 +21,24 @@ class ThisUserSerializer(ModelSerializer):
     def validate(self, data):
         if data['password1'] != data['password2']:
             raise serializers.ValidationError("Passwords don't match")
+
+        username = data['username']
+        if ThisUser.objects.filter(username=username).exists():
+            raise serializers.ValidationError("Username already exists")
         
         # edit the password
         data['password'] = data['password1']
         data['password1'] = None
         data['password2'] = None
         # if data['avatar'] is None:
-        #     data['avatar'] = 'default.png'
+        #     data['avatar'] = '../default_user.png'
         return data
     
     # We want to generate a new User and save to the databse.
     def create(self, validated_data):
-        request = self.context.get("request")
-        # if request.user.id != validated_data.get("id"):
-        #     raise serializers.ValidationError("You can only edit your own account information.")
         user = ThisUser.objects.create(**validated_data)
+        user.set_password(validated_data['password'])
+        user.save()
         return user
     
     # hide certain fields from the response
@@ -51,7 +54,6 @@ class ThisUserSerializer(ModelSerializer):
         ])
     
     
-    
     # We may need the update function later:
     # def upadate(self, instance, validate_data):
     #     instance.username = validate_data.get('username', instance.username)
@@ -62,3 +64,28 @@ class ThisUserSerializer(ModelSerializer):
     #     instance.avatar = validate_data.get('avatar', instance.avatar)
     #     instance.save()
     #     return instance
+
+
+class LoginSerializer(ModelSerializer):
+    username = serializers.CharField()
+    password = serializers.CharField()
+
+    class Meta:
+        model = ThisUser
+        fields = ['username', 'password']
+
+    def validate(self, data):
+        username = data['username']
+        password = data['password']
+        if not ThisUser.objects.filter(username=username).exists():
+            raise serializers.ValidationError("Username doesn't exist")
+        user = ThisUser.objects.get(username=username)
+        if not user.check_password(password):
+            raise serializers.ValidationError("Password is incorrect")
+        return data
+
+    def to_representation(self, instance):
+        ret = super().to_representation(instance)
+        return OrderedDict([
+            ('username', ret['username']),
+        ])
