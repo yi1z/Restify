@@ -12,8 +12,6 @@ class ThisUser(AbstractUser):
     avatar = models.ImageField(upload_to='avatar', blank=True, null=True)
     password1 = models.CharField(max_length=20, blank=True, null=True)
     password2 = models.CharField(max_length=20, blank=True, null=True)
-    
-    # temp
 
     def __str__(self):
         return self.username
