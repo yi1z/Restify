@@ -32,6 +32,9 @@ class ThisUserSerializer(ModelSerializer):
     
     # We want to generate a new User and save to the databse.
     def create(self, validated_data):
+        request = self.context.get("request")
+        # if request.user.id != validated_data.get("id"):
+        #     raise serializers.ValidationError("You can only edit your own account information.")
         user = ThisUser.objects.create(**validated_data)
         return user
     
@@ -47,13 +50,15 @@ class ThisUserSerializer(ModelSerializer):
             ('avatar', ret['avatar']),
         ])
     
+    
+    
     # We may need the update function later:
-    def upadate(self, instance, validate_data):
-        instance.username = validate_data.get('username', instance.username)
-        instance.first_name = validate_data.get('first_name', instance.first_name)
-        instance.last_name = validate_data.get('last_name', instance.last_name)
-        instance.phone_num = validate_data.get('phone_num', instance.phone_num)
-        instance.email = validate_data.get('email', instance.email)
-        instance.avatar = validate_data.get('avatar', instance.avatar)
-        instance.save()
-        return instance
+    # def upadate(self, instance, validate_data):
+    #     instance.username = validate_data.get('username', instance.username)
+    #     instance.first_name = validate_data.get('first_name', instance.first_name)
+    #     instance.last_name = validate_data.get('last_name', instance.last_name)
+    #     instance.phone_num = validate_data.get('phone_num', instance.phone_num)
+    #     instance.email = validate_data.get('email', instance.email)
+    #     instance.avatar = validate_data.get('avatar', instance.avatar)
+    #     instance.save()
+    #     return instance

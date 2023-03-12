@@ -21,11 +21,3 @@ class Property(models.Model):
     picture = models.ImageField(upload_to='property_pics', blank=True)
 
 
-# property availability
-class PropertyAvailability(models.Model):
-    # these fields are requried
-    property = models.ForeignKey(Property, on_delete=models.CASCADE)
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
-    # these fields are not required
-    price = models.FloatField(blank=False)
