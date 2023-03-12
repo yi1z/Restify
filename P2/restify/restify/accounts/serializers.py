@@ -55,37 +55,13 @@ class ThisUserSerializer(ModelSerializer):
     
     
     # We may need the update function later:
-    # def upadate(self, instance, validate_data):
-    #     instance.username = validate_data.get('username', instance.username)
-    #     instance.first_name = validate_data.get('first_name', instance.first_name)
-    #     instance.last_name = validate_data.get('last_name', instance.last_name)
-    #     instance.phone_num = validate_data.get('phone_num', instance.phone_num)
-    #     instance.email = validate_data.get('email', instance.email)
-    #     instance.avatar = validate_data.get('avatar', instance.avatar)
-    #     instance.save()
-    #     return instance
-
-
-class LoginSerializer(ModelSerializer):
-    username = serializers.CharField()
-    password = serializers.CharField()
-
-    class Meta:
-        model = ThisUser
-        fields = ['username', 'password']
-
-    def validate(self, data):
-        username = data['username']
-        password = data['password']
-        if not ThisUser.objects.filter(username=username).exists():
-            raise serializers.ValidationError("Username doesn't exist")
-        user = ThisUser.objects.get(username=username)
-        if not user.check_password(password):
-            raise serializers.ValidationError("Password is incorrect")
-        return data
-
-    def to_representation(self, instance):
-        ret = super().to_representation(instance)
-        return OrderedDict([
-            ('username', ret['username']),
-        ])
+    def upadate(self, instance, validate_data):
+        instance.username = validate_data.get('username', instance.username)
+        instance.first_name = validate_data.get('first_name', instance.first_name)
+        instance.last_name = validate_data.get('last_name', instance.last_name)
+        instance.phone_num = validate_data.get('phone_num', instance.phone_num)
+        instance.email = validate_data.get('email', instance.email)
+        instance.avatar = validate_data.get('avatar', instance.avatar)
+        instance.save()
+        return instance
+    
