@@ -15,5 +15,6 @@ urlpatterns = [
     path('reservation/list/<str:type_user>/', views.ListReservationFilterView.as_view(), name='ListReservationFilterView'),
     path('reservation/list/<str:type_user>/<str:state>/', views.ListReservationStateFilterView.as_view(), name='ListReservationStateFilterView'),
     path('reservation/list/<str:type_user>/<str:state>/<int:pk>/', views.ListReservationStateFilterView.as_view(), name='ListReservationStateFilterView'),
+    path('reservation/list/<str:type_user>/<str:state>/<str:action>/', views.DetailReservationStateUpdateView.as_view(), name='DetailReservationStateUpdateView'),
 
 ]
