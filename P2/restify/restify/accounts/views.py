@@ -57,6 +57,8 @@ class ListReservationFilterView(ListAPIView):
         else:
             # A queryset of all user's 
             # reference: https://docs.djangoproject.com/en/4.1/ref/models/querysets/#or
+
+            #TODO: Can be optimized
             q = Reserve.objects.filter(user=self.request.user) | Reserve.objects.all().filter(property__owner=self.request.user)
         print('here')
         print(self.request.user)
@@ -68,6 +70,8 @@ class ListReservationStateFilterView(ListAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
+
+
 
         # Share status
         host_status = ['pending', 'approve', 'cancel_request', 'complete', 'terminate']
@@ -87,12 +91,14 @@ class ListReservationStateFilterView(ListAPIView):
             if state in client_status:
                 q = Reserve.objects.filter(user=self.request.user, status=state, end_date__gte=datetime.today())     
             else:
+                # TODO: Can be optimized
                 q = Reserve.objects.none()
                 print('client_empty_here')
         elif user_type == 'host':
             if state in host_status:
                 q = Reserve.objects.filter(property__owner=self.request.user, status=state)
             else:
+                # TODO: Can be optimized
                 q = Reserve.objects.none()
                 print('host_empty_here')
         return q
@@ -164,5 +170,6 @@ class DetailReservationStateUpdateView(RetrieveAPIView):
             return get_object_or_404(Reserve, id=action_on_reservation_id, property__owner=self.request.user, status=status)
         elif user_type == 'client':
             return get_object_or_404(Reserve, id=action_on_reservation_id, user=self.request.user, status=status)
-          
+        
+        # TODO: Can be optimized
         return get_object_or_404(Reserve, id=self.kwargs['pk'])

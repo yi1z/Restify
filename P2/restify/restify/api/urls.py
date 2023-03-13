@@ -7,9 +7,6 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
-    # Delete Later: Reference: https://www.youtube.com/watch?v=xjMP0hspNLE
-    # This is for testing only:
-    path('', views.getTest),
 
     # Reference: https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
     # This will create an endpoint to get the token.
