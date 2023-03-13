@@ -155,7 +155,7 @@ REST_FRAMEWORK = {
 # Reference(idea come form): https://www.youtube.com/watch?v=xjMP0hspNLE
 SIMPLE_JWT = {
     
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     
     # We may want refresh token to be longer so that user will not need to login every single day.
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
