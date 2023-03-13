@@ -1,8 +1,9 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
-from .models import ThisUser
+from .models import ThisUser, Reserve
 from django.contrib.auth.models import User
 from collections import OrderedDict
+
 
 class ThisUserSerializer(ModelSerializer):
     username = serializers.CharField()
@@ -89,4 +90,13 @@ class ThisUserUpdateSerializer(ModelSerializer):
             instance.set_password(validate_data['password1'])
         instance.save()
         return instance
+    
+class ListReservationSerializer(ModelSerializer):
+
+    class Meta:
+        model = Reserve
+        fields = ['user', 'property', 'reservation_date', 'request_date', 'status', 'reservation_customer']
+
+    
+
     
