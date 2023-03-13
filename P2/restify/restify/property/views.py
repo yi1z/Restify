@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models.property import Property
-from .serializers import PropertySerializer, AvailabilitySerializer
+from .serilaizers import PropertySerializer, AvailabilitySerializer
 from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 from django.core.exceptions import PermissionDenied

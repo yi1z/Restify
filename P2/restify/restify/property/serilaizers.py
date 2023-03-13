@@ -7,8 +7,7 @@ class PropertySerializer(ModelSerializer):
 
     class Meta:
         model = Property
-        fields = ['property_name', 'owner_username', 'province', 'address', 'num_of_guests']
-
+        fields = ['property_name', 'owner_username', 'province', 'address', 'num_of_guests', 'num_of_beds', 'price_per_night']
     def create(self, validated_data):
         user = self.context['request'].user
         validated_data['owner'] = user
@@ -17,7 +16,7 @@ class PropertySerializer(ModelSerializer):
 class PropertyEditSerializer(ModelSerializer):
     class Meta:
         model = Property
-        fields = ['property_name', 'province', 'address', 'num_of_guests']
+        fields = ['property_name', 'province', 'address', 'num_of_guests', 'num_of_beds', 'price_per_night']
 
     def update(self, instance, validated_data):
         instance.name = validated_data.get('name', instance.name)
