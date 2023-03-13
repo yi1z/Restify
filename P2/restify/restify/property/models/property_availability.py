@@ -9,4 +9,4 @@ class PropertyAvailability(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     # these fields are not required
-    price = models.FloatField(blank=False)
+    # price = models.FloatField(blank=False)
