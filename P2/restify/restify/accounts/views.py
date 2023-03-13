@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from . serializers import ThisUserSerializer
 from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from .models import ThisUser
 
 # Create your views here.
 
@@ -12,10 +13,7 @@ class UserCreate(CreateAPIView):
 
 class UserEdit(UpdateAPIView):
     serializer_class = ThisUserSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = [IsAuthenticated]
 
-    def update(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_update(serializer)
-        return Response(serializer.data)
+    def get_object(self):
+        return get_object_or_404(ThisUser, id=self.kwargs['pk'])
