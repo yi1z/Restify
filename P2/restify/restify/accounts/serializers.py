@@ -3,7 +3,10 @@ from rest_framework import serializers
 from .models import ThisUser, Reserve
 from django.contrib.auth.models import User
 from collections import OrderedDict
-
+from property.models import Property
+from django.core.exceptions import PermissionDenied
+from property.models.property_availability import PropertyAvailability
+import datetime
 
 class ThisUserSerializer(ModelSerializer):
     username = serializers.CharField()
@@ -95,8 +98,46 @@ class ListReservationSerializer(ModelSerializer):
 
     class Meta:
         model = Reserve
-        fields = ['user', 'property', 'reservation_date', 'request_date', 'status', 'reservation_customer']
+        fields = ['user', 'property', 'status', 'request_date', 'start_date', 'end_date']
 
     
+#===================================================================================================
+class CreateReservationSerializer(ModelSerializer):
+    start_date = serializers.DateField()
+    end_date = serializers.DateField()
 
-    
+    class Meta:
+        model = Reserve
+        fields = ['start_date', 'end_date']
+
+    def validate(self, data):
+        start_date = data['start_date']
+        end_date = data['end_date']
+        property_id = self.context['view'].kwargs['property_id']
+        try:
+            property = Property.objects.get(id=property_id)
+        except Property.DoesNotExist:
+            raise PermissionDenied("Property does not exist.")
+
+        availability = PropertyAvailability.objects.filter(property=property)
+        if not availability.filter(start_date__lte=start_date, end_date__gte=end_date).exists():
+            raise serializers.ValidationError("The property is not available for the selected dates.")
+
+        return data
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        property_id = self.context['view'].kwargs['property_id']
+        try:
+            property = Property.objects.get(id=property_id)
+        except Property.DoesNotExist:
+            raise PermissionDenied("Property does not exist.")
+        
+
+        
+        validated_data['user'] = user
+        validated_data['property'] = property
+        validated_data['status'] = 'pending'
+        validated_data['request_date'] = datetime.datetime.now()
+        return super().create(validated_data)
+#===================================================================================================
