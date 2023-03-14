@@ -1,14 +1,13 @@
 from django.shortcuts import render
 from .models.property import Property
 from .models.property_availability import PropertyAvailability
-from .serilaizers import PropertySerializer, AvailabilitySerializer, PropertyEditSerializer, AvailabilityEditSerializer
+from .serilaizers import PropertySerializer, AvailabilitySerializer, PropertyEditSerializer, AvailabilityEditSerializer, PropertyDetailSerializer
 from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from django.core.exceptions import PermissionDenied
 from rest_framework.response import Response
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
-
 
 # Create your views here.
 
@@ -51,6 +50,8 @@ class PorpertyDelete(DestroyAPIView):
         return Response("Property deleted successfully.")
     
 
+# view all the properties
+# include function for advanced search
 class PropertyList(ListAPIView):
     serializer_class = PropertySerializer
     filter_backends = [SearchFilter, DjangoFilterBackend, OrderingFilter]
@@ -60,6 +61,19 @@ class PropertyList(ListAPIView):
 
     def get_queryset(self):
         return Property.objects.all()
+    
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = PropertySerializer(queryset, many=True)
+        return Response(self.paginate_queryset(serializer.data))
+    
+
+# view detail for a certain property
+class PropertyDetail(ListAPIView):
+    serializer_class = PropertyDetailSerializer
+
+    def get_queryset(self):
+        return Property.objects.filter(id=self.kwargs['property_id'])
 
 
 class AvailabilityCreate(CreateAPIView):
@@ -82,4 +96,4 @@ class AvailabilityEdit(UpdateAPIView):
     def get(self, request, *args, **kwargs):
         avail = self.get_object()
         serializer = AvailabilitySerializer(instance=avail)
-        return Response(serializer.data)
+        return Response(self.paginate_queryset(serializer.data))

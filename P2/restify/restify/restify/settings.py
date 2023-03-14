@@ -141,11 +141,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Add the rest_framework setting for simple JWT
 # Code Reference: https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
 REST_FRAMEWORK = {
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+
+    'PAGE_SIZE': 2,
  
     'DEFAULT_AUTHENTICATION_CLASSES': (
  
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
  
 }
 

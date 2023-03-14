@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer, CharField, IntegerField, DateField, FloatField, DateTimeField
 from .models.property import Property
 from .models.property_availability import PropertyAvailability
+from social.models.comment_model import Comment
 from django.core.exceptions import PermissionDenied, ValidationError
 
 class PropertySerializer(ModelSerializer):
@@ -24,8 +25,31 @@ class PropertySerializer(ModelSerializer):
     
     def to_representation(self, instance):
         representation = super().to_representation(instance)
+        representation['lowest_avail_price'] = instance.lowest_avail_price
+        representation.pop('owner_username')
+        representation.pop('num_of_beds')
+        return representation
+
+class PropertyDetailSerializer(ModelSerializer):
+
+    class Meta:
+        model = Property
+        fields = ['property_name', 'city', 'country', 'address', 'num_of_guests', 'num_of_beds', 'property_type']
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        validated_data['owner'] = user
+        return super().create(validated_data)
+    
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
         representation['property_id'] = instance.id
         representation['lowest_avail_price'] = instance.lowest_avail_price
+        representation['comments'] = Comment.objects.filter(target_type='property', target_id=instance.id)
+        representation['host name'] = instance.owner.first_name + ' ' + instance.owner.last_name
+        representation['host username'] = instance.owner.username
+        representation['host email'] = instance.owner.email
+        representation['host phone'] = instance.owner.phone_num
         return representation
     
 class PropertyEditSerializer(ModelSerializer):
