@@ -106,7 +106,7 @@ class NotificationList(ListAPIView):
     serializer_class = NotificationSerializer
 
     def get_queryset(self):
-        return Notify.objects.filter(user=self.request.user)
+        return Notify.objects.filter(user=self.request.user, is_read=False)
     
 
 class CommentDetail(ListAPIView):
