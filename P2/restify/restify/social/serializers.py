@@ -3,6 +3,7 @@ from property.models import Property
 from rest_framework.serializers import ModelSerializer, CharField, IntegerField, DateField, FloatField, DateTimeField, ValidationError
 from .models import Comment, Notify
 import datetime as dt
+from accounts.models import Reserve
 
 class UserCommentSerializer(ModelSerializer):
     content = CharField()
@@ -71,6 +72,8 @@ class PropertyCommentSerializer(ModelSerializer):
 
         # get the property
         target_id = self.context['view'].kwargs['target_id']
+        # get the reservation order number
+        order_number = self.context['view'].kwargs['order_num']
         try:
             property = Property.objects.get(id=target_id)
         except Property.DoesNotExist:
@@ -86,6 +89,21 @@ class PropertyCommentSerializer(ModelSerializer):
             raise ValidationError(
                 {'content: You cannot comment on your own property'}
             )
+        
+        # check if the user has reserved the property, and the status of the reservation is approved/terminated
+        try:
+            reservation = Reserve.objects.get(id=order_number)
+            if reservation.status == 'complete' or reservation.status == 'terminate':
+                pass
+            else:   
+                raise ValidationError(
+                        {f'content1: You cannot comment on a property that is not completed or terminated, status: {reservation.status}'}
+                    )
+        except Reserve.DoesNotExist:
+            raise ValidationError(
+                {'content2: You cannot comment on a property you have not reserved'}
+            )
+        
 
         # generate a notification
         notification = Notify.objects.create(user=property.owner, 
