@@ -102,6 +102,7 @@ class ReplyCommentDelete(DestroyAPIView):
             raise PermissionDenied
 
 class NotificationList(ListAPIView):
+    permission_classes = [IsAuthenticated]
     serializer_class = NotificationSerializer
 
     def get_queryset(self):

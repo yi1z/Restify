@@ -81,6 +81,12 @@ class PropertyCommentSerializer(ModelSerializer):
         validated_data['reply_to'] = None
         validated_data['date'] = dt.datetime.now()
 
+        # check if the user is the owner of the property
+        if user == property.owner:
+            raise ValidationError(
+                {'content: You cannot comment on your own property'}
+            )
+
         # generate a notification
         notification = Notify.objects.create(user=property.owner, 
                                              content=f"{user.username} commented on your property {property.property_name}\n{validated_data['content']}", 
@@ -128,16 +134,24 @@ class ReplyCommentSerializer(ModelSerializer):
         validated_data['reply_to'] = comment
         validated_data['date'] = dt.datetime.now()
 
-        # if the comment is made to a property
-        # then only the host can reply to it
         if comment.target_type == 'property':
             property = Property.objects.get(id=comment.target_id)
 
+            # if the comment is made to a property
             if user != property.owner:
+            
+                # if the comment being replied is not done by the host of the property
+                # then the user cannot reply to it
+                if comment.user != property.owner:
+                    raise ValidationError(
+                        {'content: You cannot reply to a comment not posted by the host.'}
+                    )
+                
+                # then only the host can reply to it
                 raise ValidationError(
-                    {'content: You cannot reply to this comment'}
+                    {'content: You are not the host of the property. You cannot add more replies to this comment.'}
                 )
-
+            
         # generate a notification
         notification = Notify.objects.create(user=comment.user,
                                              content=f"{user.username} replied to your comment \n'{validated_data['content']}'",
@@ -164,6 +178,11 @@ class NotificationSerializer(ModelSerializer):
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         representation['date'] = instance.date
+
+        # change the is_read status to True
+        instance.is_read = True
+        instance.save()
+        representation['is_read'] = instance.is_read
         return representation
 
 
