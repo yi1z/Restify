@@ -6,6 +6,8 @@ from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView, D
 from rest_framework.permissions import IsAuthenticated
 from django.core.exceptions import PermissionDenied
 from rest_framework.response import Response
+from rest_framework.filters import OrderingFilter, SearchFilter
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 # Create your views here.
@@ -50,12 +52,14 @@ class PorpertyDelete(DestroyAPIView):
     
 
 class PropertyList(ListAPIView):
-    permission_classes = [IsAuthenticated]
     serializer_class = PropertySerializer
+    filter_backends = [SearchFilter, DjangoFilterBackend, OrderingFilter]
+    filterset_fields = ['city', 'country', 'num_of_guests', 'num_of_beds', 'property_type']
+    search_fields = ['property_name', 'city', 'country', 'property_type']
+    ordering_fields = ['num_of_guests', 'num_of_beds', 'lowest_avail_price']
 
     def get_queryset(self):
-        user = self.request.user
-        return Property.objects.filter(owner=user)
+        return Property.objects.all()
 
 
 class AvailabilityCreate(CreateAPIView):

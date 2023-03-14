@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'accounts',
     'property',
     'social',
+    'django_filters',
 ]
 
 # custom user model

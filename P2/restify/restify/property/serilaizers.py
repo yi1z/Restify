@@ -6,14 +6,16 @@ from django.core.exceptions import PermissionDenied, ValidationError
 class PropertySerializer(ModelSerializer):
     owner_username = CharField(source='owner.username', read_only=True, allow_null=False)
     property_name = CharField()
-    province = CharField()
+    city = CharField()
+    country = CharField()
     address = CharField()
     num_of_guests = IntegerField()
     num_of_beds = IntegerField()
+    property_type = CharField()
 
     class Meta:
         model = Property
-        fields = ['property_name', 'owner_username', 'province', 'address', 'num_of_guests', 'num_of_beds']
+        fields = ['property_name', 'owner_username', 'city', 'country', 'address', 'num_of_guests', 'num_of_beds', 'property_type']
 
     def create(self, validated_data):
         user = self.context['request'].user
@@ -23,20 +25,23 @@ class PropertySerializer(ModelSerializer):
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         representation['property_id'] = instance.id
+        representation['lowest_avail_price'] = instance.lowest_avail_price
         return representation
     
 class PropertyEditSerializer(ModelSerializer):
 
     class Meta:
         model = Property
-        fields = ['property_name', 'province', 'address', 'num_of_guests', 'num_of_beds']
+        fields = ['property_name', 'city', 'country', 'address', 'num_of_guests', 'num_of_beds', 'property_type']
 
     def update(self, instance, validated_data):
         instance.property_name = validated_data.get('property_name', instance.property_name)
-        instance.province = validated_data.get('province', instance.province)
+        instance.city = validated_data.get('city', instance.city)
+        instance.country = validated_data.get('country', instance.country)
         instance.address = validated_data.get('address', instance.address)
         instance.num_of_guests = validated_data.get('num_of_guests', instance.num_of_guests)
         instance.num_of_beds = validated_data.get('num_of_beds', instance.num_of_beds)
+        instance.property_type = validated_data.get('property_type', instance.property_type)
         instance.save()
         return instance
     
@@ -59,6 +64,11 @@ class AvailabilitySerializer(ModelSerializer):
         if property.owner != user:
             raise PermissionDenied("You are not the owner of this property.")
         validated_data['property'] = property
+
+        # modify property's lowest price
+        if property.lowest_avail_price > validated_data['price']:
+            property.lowest_avail_price = validated_data['price']
+            property.save()
         return super().create(validated_data)
 
 class AvailabilityEditSerializer(ModelSerializer):
@@ -73,3 +83,4 @@ class AvailabilityEditSerializer(ModelSerializer):
         instance.price = validated_data.get('price', instance.price)
         instance.save()
         return instance
+        
