@@ -1,28 +1,27 @@
-#--------------- Linux -----------------
+echo "Starting up"
 sudo apt-get update
+echo "Installing python3.10"
 sudo apt-get install python3.10
+echo "Installing pip3"
 sudo apt-get install python3-pip
-sudo apt-get install python3.10-venv
-
-# create a new environment
+echo "Installing virtualenv"
+sudo apt install python3-virtualenv
+echo "Creating virtual environment"
 virtualenv -p python3 venv
-
-# activate the virtual environment
+echo "Virtual environment created"
+echo "Activating virtual environment"
 source venv/bin/activate
-
-# move to the next level
+echo "Virtual environment activated"
+echo "Installing packages"
 cd restify
-
-# install needed packages
 pip install -r /packages.txt
-
-# move to the next level
+echo "Packages installed"
+echo "Running migrations"
 cd restify
-
-# run migrations
 python3 manage.py makemigrations
 python3 manage.py migrate
-
+echo "Migrations done"
+echo "All compelted"
 
 #--------------- MAC -----------------
 

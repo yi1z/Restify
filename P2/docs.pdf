@@ -1,0 +1,43 @@
+The sign *XXXXX* means that this url can only be accessed with token provided
+
+accounts:
+# create a new account
+accounts/create/
+# edit an existing account with user_id *XXXXX*
+accounts/edit/<int:user_id>/
+
+property:
+# create a new property *XXXXX*
+property/create/
+# edit an existing property with property_id  *XXXXX*
+property/edit/<int:property_id>/
+# delete an existing property with property_id *XXXXX*
+delete/<int:property_id>/
+# check the detail of a property with property_id
+detail/<int:property_id>/
+# show the list of all properties
+list/
+# add an available time slot for the property with property_id *XXXXX*
+<int:property_id>/avail/add/
+# edit an existing available time slot *XXXXX*
+avail/<int:avail_id>/edit/
+
+social:
+# write a comment for a user with target_id *XXXXX*
+social/comment/user/<int:target_id>/create/
+# view all comments for a user with target_id
+social/comment/user/<int:target_id>/view/
+# not required by the rubric, untested
+social/comment/user/<int:target_id>/delete/<int:comment_id>/
+# write a comment for a property with target_id *XXXXX*
+social/comment/property/<int:target_id>/create/
+# view all comments for a property with target_id
+social/comment/property/<int:target_id>/view/
+# not required by the rubric, untested
+social/comment/property/<int:target_id>/delete/<int:comment_id>/
+# write a reply to an existing comment with target_id *XXXXX*
+social/reply/<int:target_id>/create/
+# view all the notifications for the current logged in user *XXXXX*
+social/notification/view/
+# view the detail information of a comment with comment_id
+social/comment/detail/<int:comment_id>/
