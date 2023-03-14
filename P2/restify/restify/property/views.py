@@ -54,13 +54,14 @@ class PorpertyDelete(DestroyAPIView):
 # include function for advanced search
 class PropertyList(ListAPIView):
     serializer_class = PropertySerializer
+    permission_classes = []
     filter_backends = [SearchFilter, DjangoFilterBackend, OrderingFilter]
-    filterset_fields = ['city', 'country', 'num_of_guests', 'num_of_beds', 'property_type']
     search_fields = ['property_name', 'city', 'country', 'property_type']
+    filterset_fields = ['city', 'country', 'num_of_guests', 'num_of_beds', 'property_type']
     ordering_fields = ['num_of_guests', 'num_of_beds', 'lowest_avail_price']
 
     def get_queryset(self):
-        return Property.objects.all()
+        return self.filter_queryset(Property.objects.all())
     
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
