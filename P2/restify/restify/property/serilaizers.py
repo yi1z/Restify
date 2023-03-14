@@ -28,6 +28,7 @@ class PropertySerializer(ModelSerializer):
         representation['lowest_avail_price'] = instance.lowest_avail_price
         if instance.lowest_avail_price == 1000000000000:
             representation['lowest_avail_price'] = 'N/A'
+        representation['property_id'] = instance.id
         representation.pop('owner_username')
         representation.pop('num_of_beds')
         return representation
