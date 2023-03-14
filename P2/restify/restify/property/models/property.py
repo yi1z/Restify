@@ -17,7 +17,6 @@ class Property(models.Model):
     address = models.CharField(max_length=100, blank=True)
     num_of_guests = models.IntegerField(blank=True)
     num_of_beds = models.IntegerField(blank=True)
-    price_per_night = models.IntegerField(blank=True)
     # amenities = models.ManyToManyField(Amenity, blank=False)
     # these fields are not required
     # picture = models.ImageField(upload_to='property_pics', blank=True)

@@ -12,5 +12,6 @@ urlpatterns = [
     path('delete/<int:property_id>/', views.PorpertyDelete.as_view(), name='delete'),
     path('list/', views.PropertyList.as_view(), name='list'),
     # make a url allow the ower to create the availavility of the specific property
-    path('availability/<int:property_id>/', views.AvailabilityCreate.as_view(), name='create-availability'),
+    path('<int:property_id>/avail/add/', views.AvailabilityCreate.as_view(), name='create-availability'),
+    path('avail/<int:avail_id>/edit/', views.AvailabilityEdit.as_view(), name='edit-availability'),
 ]

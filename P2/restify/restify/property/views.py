@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models.property import Property
-from .serilaizers import PropertySerializer, AvailabilitySerializer
+from .models.property_availability import PropertyAvailability
+from .serilaizers import PropertySerializer, AvailabilitySerializer, PropertyEditSerializer, AvailabilityEditSerializer
 from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from django.core.exceptions import PermissionDenied
@@ -15,7 +16,7 @@ class PorpertyCreate(CreateAPIView):
 
 class PorpertyEdit(UpdateAPIView):
     permission_classes = [IsAuthenticated]
-    serializer_class = PropertySerializer
+    serializer_class = PropertyEditSerializer
 
     def get_object(self):
         property_id = self.kwargs['property_id']
@@ -61,10 +62,20 @@ class AvailabilityCreate(CreateAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = AvailabilitySerializer
 
-    def perform_create(self, serializer):
-        property_id = self.kwargs['property_id']
+
+class AvailabilityEdit(UpdateAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = AvailabilityEditSerializer
+
+    def get_object(self):
+        avail_id = self.kwargs['avail_id']
         user = self.request.user
-        property = Property.objects.get(id=property_id)
-        if property.owner != user:
+        avail = PropertyAvailability.objects.get(id=avail_id)
+        if avail.property.owner != user:
             raise PermissionDenied("You are not the owner of this property.")
-        serializer.save(property=property)
+        return avail
+    
+    def get(self, request, *args, **kwargs):
+        avail = self.get_object()
+        serializer = AvailabilitySerializer(instance=avail)
+        return Response(serializer.data)
