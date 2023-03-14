@@ -28,4 +28,5 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('accounts/', include('accounts.urls')),
     path('property/', include('property.urls')),
+    path('social/', include('social.urls')),
 ]

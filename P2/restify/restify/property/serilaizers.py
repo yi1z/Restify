@@ -48,7 +48,9 @@ class PropertyDetailSerializer(ModelSerializer):
         representation = super().to_representation(instance)
         representation['property_id'] = instance.id
         representation['lowest_avail_price'] = instance.lowest_avail_price
-        representation['comments'] = Comment.objects.filter(target_type='property', target_id=instance.id)
+        replies = Comment.objects.filter(target_type='property', target_id=instance.id)
+        if len(replies) > 0:
+            representation['comments'] = [("user: " + reply.user.username, "content: " + reply.content) for reply in replies]
         representation['host name'] = instance.owner.first_name + ' ' + instance.owner.last_name
         representation['host username'] = instance.owner.username
         representation['host email'] = instance.owner.email
