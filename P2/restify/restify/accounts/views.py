@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from .models import ThisUser, Reserve
 from datetime import datetime
 from property.models import Property
+from social.models.notify import Notify
 
 # Create your views here.
 
@@ -176,6 +177,14 @@ class ApproveReservation(UpdateAPIView):
             return Response({'message': 'You are not the host of this property'})
         if self.get_object().status != 'pending':
             return Response({'message': 'This reservation is not in pending status'})
+        
+        Notify.objects.create(
+            user=self.get_object().user,
+            content="host '{}' approve reservation for property '{}'.".format(
+                self.request.user.username,
+                self.get_object().property.property_name,
+            )
+        )
         serializer.save(status='approved')
 
 
@@ -192,6 +201,14 @@ class HostCancelReservation(UpdateAPIView):
             return Response({'message': 'You are not the host of this property'})
         if self.get_object().status != 'pending':
             return Response({'message': 'This reservation is not in pending status'})
+        
+        Notify.objects.create(
+            user=self.get_object().user,
+            content="host '{}' cancel reservation for property '{}'.".format(
+                self.request.user.username,
+                self.get_object().property.property_name,
+            )
+        )
         serializer.save(status='request_cancel')
 
 
@@ -208,6 +225,15 @@ class ClientCancelReservation(UpdateAPIView):
             return Response({'message': 'You are not the client of this property'})
         if self.get_object().status != 'pending':
             return Response({'message': 'This reservation is not in pending status'})
+        
+        ########## add notice to host ##########
+        Notify.objects.create(
+            user=self.get_object().property.owner,
+            content="Client '{}' reservation for property '{}' has been cancelled.".format(
+                self.request.user.username,
+                self.get_object().property.property_name,
+            )
+        )
         serializer.save(status='cancel')
 
 # a function to update the status of reservation, when the host terminate the reservation, the status will be changed to terminate

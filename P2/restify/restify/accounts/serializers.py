@@ -7,6 +7,7 @@ from property.models import Property
 from django.core.exceptions import PermissionDenied
 from property.models.property_availability import PropertyAvailability
 import datetime
+from social.models.notify import Notify
 
 class ThisUserSerializer(ModelSerializer):
     username = serializers.CharField()
@@ -139,5 +140,15 @@ class CreateReservationSerializer(ModelSerializer):
         validated_data['property'] = property
         validated_data['status'] = 'pending'
         validated_data['request_date'] = datetime.datetime.now()
+
+
+        Notify.objects.create(
+        user=property.owner, 
+        content="client '{}' have made a reservation for property '{}' ".format(
+            user.username,
+            property.property_name
+            )
+        )
+
         return super().create(validated_data)
 #===================================================================================================

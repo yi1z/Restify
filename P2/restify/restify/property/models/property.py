@@ -17,7 +17,7 @@ class Property(models.Model):
     country = models.CharField(max_length=100, blank=True)
     address = models.CharField(max_length=100, blank=True)
     num_of_guests = models.IntegerField(blank=True)
-    num_of_beds = models.IntegerField(blank=True)
+    num_of_beds = models.IntegerField(blank=True,default=0)
     lowest_avail_price = models.FloatField(blank=True, default=1000000000000)
     property_type = models.CharField(max_length=100, blank=True)
     # amenities = models.ManyToManyField(Amenity, blank=False)

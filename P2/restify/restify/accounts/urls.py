@@ -23,8 +23,8 @@ urlpatterns = [
     #host approve order
     path('reservation/approve/<int:order_num>/', views.ApproveReservation.as_view(), name='ApproveReservation'),
     #host/client cancel order
-    path('reservation/host-cancel/<int:order_num>/', views.HostCancelReservation.as_view(), name='CancelReservation'),
-    path('reservation/client-cancel/<int:order_num>/', views.ClientCancelReservation.as_view(), name='CancelReservation'),
+    path('reservation/host-cancel/<int:order_num>/', views.HostCancelReservation.as_view(), name='hostCancelReservation'),
+    path('reservation/client-cancel/<int:order_num>/', views.ClientCancelReservation.as_view(), name='clientCancelReservation'),
     #host terminate order
     path('reservation/terminate/<int:order_num>/', views.TerminateReservation.as_view(), name='TerminateReservation'),
     #client denied order
